@@ -1,0 +1,82 @@
+{
+	"main":[
+		{
+			"name": "Максим Кыштымов",
+			"rank": "отец-основатель",
+			"link": "team/maxkysh"
+		},
+		{
+			"name": "Татьяна Кыштымова",
+			"rank": "проект-менеджер",
+			"link": "team/tanyakysh"
+		},
+		{
+			"name": "Константин Кулеша",
+			"rank": "проект-менеджер",
+			"link": "team/kylesha",
+			"img": "url(public/kylesha.jpg)"
+		},
+		{
+			"name": "Екатерина Проскурина",
+			"rank": "менеджер",
+			"link": "team/proskyrina"
+		},
+		{
+			"name": "Александр Педченко",
+			"rank": "арт-директор",
+			"link": "team/pedchenko"
+		},
+		{
+			"name": "Кирилл Ким",
+			"rank": "ui/ux, branding, motion дизайнер",
+			"link": "team/kim"
+		},
+		{
+			"name": "Эйнар Хамидуллин",
+			"rank": "motion-дизайнер",
+			"link": "team/Khamidulin"
+		},
+		{
+			"name": "Владимир Игнатенко",
+			"rank": "ui/ux дизайнер",
+			"link": "team/Ignatenko"
+		},
+		{
+			"name": "Евгений Якуба",
+			"rank": "frontend разработчик",
+			"link": "team/Jakuba"
+		},
+		{
+			"name": "Иван Решетило",
+			"rank": "backend разработчик",
+			"link": "team/Reshetilo"
+		}
+	],
+	"remote":[
+		{
+			"name": "Евгений Игнашев",
+			"rank": "проект-менеджер",
+			"link": "team/kylesha"
+		},
+		{
+			"name": "Дарья Петреева",
+			"rank": "проект-менеджер",
+			"link": "team/kylesha"
+		},
+		{
+			"name": "Екатерина Шестакова",
+			"rank": "проект-менеджер",
+			"link": "team/kylesha"
+		},
+		{
+			"name": "Филипп Бабанин",
+			"rank": "проект-менеджер",
+			"link": "team/kylesha"
+		},
+		{
+			"name": "Павел Шаталов",
+			"rank": "проект-менеджер",
+			"link": "team/kylesha"
+		}
+	]
+}

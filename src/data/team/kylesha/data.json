@@ -1,0 +1,24 @@
+{
+	"name": "Кулеша Константин",
+	"rank": "проект-менеджер",
+	"descr": "Доведет проект до логического конца. Стальные нервы и выдержка",
+	"awards": [
+		{
+			"img": "public/aic.svg",
+			"award_text": "Прошел курс UX Design от студии AIC получил диплом с отличием"
+		},
+		{
+			"img": "public/be_i.svg",
+			"award_text": "Featuring на Behance.net в разделе «Interraction» "
+		}
+	],
+	"socials":[
+		{
+			"icon": "fa-facebook",
+			"link": "https://vk.com/kostensky"
+		}
+	],
+	"img": "url(public/kylesha.jpg)",
+	"email": "info@chipsa.ru",
+	"skills":["Арт-дирекшн", "Визуализаия", "Ретушь", "3D-моделирование", "3D-визуализация", "UX/UI сайты и приложения"]
+}
