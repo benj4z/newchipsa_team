@@ -1,24 +1,24 @@
 @font-face {
     font-family: Northem;
-    src: url('/src/assets/fonts/TheNorthernBlockMedium.otf');
+    src: url('src/assets/fonts/TheNorthernBlockMedium.otf');
     font-weight: 400;
 }
 
 @font-face {
     font-family: Northem;
-    src: url('/src/assets/fonts/TheNorthernBlockBold.otf');
+    src: url('src/assets/fonts/TheNorthernBlockBold.otf');
     font-weight: 800;
 }
 
 @font-face {
     font-family: Northem;
-    src: url('/src/assets/fonts/TheNorthernBlockDemiBold.otf');
+    src: url('src/assets/fonts/TheNorthernBlockDemiBold.otf');
     font-weight: 700;
 }
 
 @font-face {
     font-family: Northem;
-    src: url('/src/assets/fonts/The NorthernBlockNorpethLight.otf');
+    src: url('src/assets/fonts/The NorthernBlockNorpethLight.otf');
     font-weight: 200;
 }
 
