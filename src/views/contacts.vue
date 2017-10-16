@@ -261,8 +261,8 @@
 				setTimeout(() => {
 					$(this.$el).find('.contacts-map').toggleClass('onScreen offScreen');
 					$(this.$el).find('.contacts-info').toggleClass('onScreen offScreen');
-				}, 500);
-				done();
+					done();
+				}, 800);
 			},
 			beforeAnimate(){
 				$(this.$el).find('.contacts-map').removeClass('onScreen');
@@ -340,7 +340,7 @@
 		height: 0%;
 		top: 0px;
 		left: 0px;
-		transition: height .15s, opacity .15s .3s;
+		transition: height .15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .15s .3s cubic-bezier(0.215, 0.61, 0.355, 1);
 		z-index: 2;
 		&.active{
 			height: 100%;
@@ -359,7 +359,7 @@
 		height: 100%;
 		background-size: cover;
 		background-position: center;
-		transition: all .35s;
+		transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 	.contact-content{
 		position: absolute;
@@ -378,7 +378,7 @@
 			justify-content: space-between;
 			height: 0%;
 			opacity: 0;
-			transition: all .55s ease-out;
+			transition: all .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.onScreen{
 				height: 100%;
 				opacity: 1;
@@ -391,9 +391,9 @@
 				color: #fff;
 				font-size: 5.5vw;
 				line-height: 100%;
-				font-weight: 600;
+				font-weight: 400;
 				text-decoration: none;
-				transition: all .35s;
+				transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 				&:hover{
 					color: #fecc03;
 				}
@@ -410,7 +410,7 @@
 						opacity: 1;
 					}
 					opacity: 0.5;
-					transition: all .35s;
+					transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 					float: left;
 					margin-right: 10%;
 					&:last-child{
@@ -441,7 +441,7 @@
 			position: relative;
 			height: 0%;
 			opacity: 0;
-			transition: all .35s;
+			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.onScreen{
 				height: 100%;
 				opacity: 1;

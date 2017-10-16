@@ -1,5 +1,5 @@
 <template lang="pug">
-	transition(v-on:enter="startAnimate" v-on:before-enter="beforeAnimate" v-on:leave="leaveAnimate" appear mode="out-in")
+	transition(v-on:enter="startAnimate" v-on:before-enter="beforeAnimate" v-on:leave="leaveAnimate" v-bind:css="false" appear mode="out-in")
 		section.works-block
 				.work-background.offScreen(v-bind:style="{ backgroundImage: img}")
 				.work.owl-carousel
@@ -156,8 +156,8 @@
 					$(this.$el).find('.color-half').toggleClass('onScreen offScreen');
 					$(this.$el).find('.info-half').toggleClass('onScreen offScreen');
 					$(this.$el).find('.work-background').toggleClass('onScreen offScreen');
-				}, 600);
-				done();
+					done();
+				}, 700);
 			},
 			beforeAnimate(){
 				$(this.$el).find('.color-half').removeClass('onScreen');
@@ -167,15 +167,17 @@
 			leaveAnimate(el, done){
 				$(this.$el).find('.color-half').toggleClass('onScreen offScreen');
 				$(this.$el).find('.info-half').toggleClass('onScreen offScreen');
-				$(this.$el).find('.work-background').toggleClass('onScreen offScreen');
+				setTimeout(() => {$(this.$el).find('.work-background').toggleClass('onScreen offScreen');
+				}, 350);
+
 				setTimeout(() => {
 					done();
-				},700);
+				}, 800);
 			}
 		},
 		created(){
 			let bgImg = [];
-			for (let i = 1; i < this.works.length+1; i++){
+			for (let i = 0; i < this.works.length; i++){
 				let last = this.works[i].img.length - 1;
 				var src = this.works[i].img.slice(4, last);
 				bgImg[i] = new Image();
@@ -209,11 +211,10 @@
 		z-index: 0;
 		height: 100%;
 		width: 100%;
-		transition: all .35s;
 		background-position: center;
 		background-size: cover;
 		opacity: 0;
-		transition: all .45s;
+		transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
 		&.onScreen{
 			opacity: 1;
 		}
@@ -253,23 +254,22 @@
 			padding: 5% 8%;
 			position: absolute;
 			left: 0%;
-			transition: all .35s;
+			transition: all .36s cubic-bezier(0.215, 0.61, 0.355, 1);
 			text-decoration: none;
 			&:before{
 				content: none;
 			}
 			&:hover{
 				opacity: 1!important;
-				
 			}
 			&.onScreen{
 				height: 100%;
-				opacity: 0.86;
+				opacity: 0.85;
 				top: 0px;
 				bottom: auto;
 			}
 			&.offScreen{
-				height: 0px;
+				height: 0%;
 				opacity: 0;
 				top: auto;
 				bottom: 0px;
@@ -294,7 +294,7 @@
 				.site-link{
 					color: #fff;
 					font-size: 22px;
-					transition: all .35s;
+					transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 				}
 			}
 			.bottom-links{
@@ -316,7 +316,7 @@
 					font-weight: 400;
 				}
 				img{
-					transition: all .35s;
+					transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 				}
 			}
 		}
@@ -331,7 +331,7 @@
 			position: absolute;
 			left: 50%;
 			background-color: rgba(#000, 0.5);
-			transition: all .35s;
+			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.onScreen{
 				height: 100%;
 				opacity: 1;
@@ -339,7 +339,7 @@
 				bottom: auto;
 			}
 			&.offScreen{
-				height: 0px;
+				height: 0%;
 				opacity: 0;
 				top: auto;
 				bottom: 0px;
@@ -351,7 +351,7 @@
 				padding-left: 0;
 				li{
 					color: #fff;
-					margin-bottom: 14px;
+					margin-bottom: 10px;
 					padding-left: 1em;
   					text-indent: -1em;
   					font-size: 16px;
@@ -367,7 +367,7 @@
 			    position: absolute;
     			right: 8%;
     			top: 10%;
-    			font-size: 24px;
+    			font-size: 16px;
     			font-weight: 400;
 			}
 		}
@@ -415,14 +415,14 @@
     	}
 	    .owl-dots{
 	    	.owl-dot {
-			    width: 12px;
-			    height: 12px;
+			    width: 10px;
+			    height: 10px;
 			    display: inline-block;
 			    border: 2px solid #fff;
 			    border-radius: 50%;
 			    margin-right: 20px;
 			    background-color: transparent;
-			    transition: all .35s;
+			    transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			    cursor: pointer;
 			    &.active, &:hover{
 			    	background-color: #fff;

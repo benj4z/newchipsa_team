@@ -1,16 +1,18 @@
 <template lang="pug">
 	transition(v-on:enter="startAnimate" v-on:before-enter="beforeAnimate" v-on:leave="leaveAnimate" appear mode="out-in")
 		.fullpage
-			.background-pic
+			.background-pic.common
 			section
 				.small-view.team.animated.offScreen
+					router-link(to="/raiting").back-button.abs-vert-center.menu-link.active
+						span
 					.team-header.offScreen
-						h2 Команда
+						h2 {{ tab_title }}
 						ul.worker-switch
 							li(v-bind:class='{ active: main_roster }' @click="switchRoster")
-								button Офис в Москве
+								button Штатные сотрудники
 							li(v-bind:class='{ active: !main_roster }' @click="switchRoster")
-								button Офис в Красноярске
+								button Внештатные сотрудники
 					.team-content.offScreen(v-if="team_data && Object.keys(team_data).length")
 						transition(name='fade')
 							.team-container(v-show="main_roster" mode="out-in")
@@ -32,17 +34,20 @@
 		data(){
 			return{
 				main_roster: true,
-				team_data: ''
+				team_data: '',
+				tab_title: 'Штатные сотрудники'
 			}
 		},
 		methods:{
 			startAnimate(el, done){
+				$('.ui-paginator').hide();
+				$('.ui-view-switcher').hide();
 				setTimeout(() => {
 					$(this.$el).find('.small-view').toggleClass('onScreen offScreen');
 					$(this.$el).find('.team-header').toggleClass('onScreen offScreen');
 					$(this.$el).find('.team-content').toggleClass('onScreen offScreen');
 					done();
-				}, 700);
+				}, 600);
 			},
 			beforeAnimate(){
 				$(this.$el).find('.small-view').removeClass('onScreen');
@@ -50,6 +55,8 @@
 				$(this.$el).find('.team-content').removeClass('onScreen');
 			},
 			leaveAnimate(el, done){
+				$('.ui-paginator').show();
+				$('.ui-view-switcher').show();
 				setTimeout(() => {$(this.$el).find('.small-view').toggleClass('onScreen offScreen');}, 350)
 				$(this.$el).find('.team-header').toggleClass('onScreen offScreen');
 				$(this.$el).find('.team-content').toggleClass('onScreen offScreen');
@@ -60,6 +67,7 @@
 			switchRoster(el){
 				if (el.target.parentElement.className !== 'active'){
 					this.main_roster = !this.main_roster;
+					this.tab_title = el.target.parentElement.innerText
 				}
 			}
 		},
@@ -79,23 +87,33 @@
 			$(document).on('mouseenter', '.team-container:visible .team-item', function(){
 				var img = $(this).data("img");
 				setTimeout(function(){
-					$('.background-pic').css('background-image', img);
-					$('.background-pic').addClass('active');
+					$('.background-pic.common').css('background-image', img);
+					$('.background-pic.common').addClass('active');
 				}, 300);
 			});
 
 			$(document).on('mouseleave', '.team-container:visible .team-item', function(){
-				$('.background-pic').removeClass('active');
+				$('.background-pic.common').removeClass('active');
 				setTimeout(function(){
-					$('.background-pic').css('background-image', 'none');
+					$('.background-pic.common').css('background-image', 'none');
 				}, 300);
 			});
+
+
+
 		}
 
 	}
 </script>
 
 <style lang="scss" scoped>
+	.back-button{
+		position: absolute;
+		right: -15%;
+		top: 12.4%;
+		left: auto;
+		opacity: 1;
+	}
 	.fullpage{
 		position: relative;
 		width: 100%;
@@ -116,7 +134,7 @@
 		opacity: 0;
 		background-position: center 0;
 		background-size: cover;
-		transition: all .3s;
+		transition: all .3s cubic-bezier(0.215, 0.61, 0.355, 1);
 		&.active{
 			opacity: 0.4;
 		}
@@ -131,7 +149,7 @@
 			display: flex;
 			align-items: flex-end;
 			margin-top: 5%;
-			transition: all .35s;
+			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.offScreen{
 				opacity: 0;
 			}
@@ -166,7 +184,7 @@
 						color: #fff;
 						border: none;
 						opacity: 0.7;
-						transition: all .35s;
+						transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 					    font-size: 18px;
     					font-weight: 200;
     					cursor: pointer;
@@ -180,7 +198,7 @@
 		}
 		.team-content{
 			margin-top: 80px;
-			transition: all .35s;
+			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.offScreen{
 				opacity: 0;
 			}
@@ -217,6 +235,7 @@
 				.rank{
 					width: 35%;
 					font-size: 16px;
+					opacity: 0.35;
 				}
 			}
 		}

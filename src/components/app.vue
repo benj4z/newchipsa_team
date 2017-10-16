@@ -14,8 +14,8 @@
 				ul
 					li
 						a(href="#/contacts") Контакты
-					li
-						a(href="http://blog.chipsa.ru/", target="_blank") Блог
+					//- li
+					//- 	a(href="http://blog.chipsa.ru/", target="_blank") Блог
 					li
 						a(href="http://blog.chipsa.ru/presentation/CHIPSA_Presentation.pdf", target="_blank") PDF
 			a.menu-link.abs-vert-center(href="#" @click="menu" v-bind:class="{ active: menuOpen, orderActive: orderOpen}")
@@ -54,7 +54,6 @@
 			video(src="src/assets/ChipsaBack.mov" autoplay loop muted poster="src/assets/first_frame.jpg")
 		v-touch.fillheight(v-on:pan="touch_move")
 			router-view
-
 
 </template>
 
@@ -110,11 +109,21 @@
 						title: 'Лучшие работы'
 					},
 					{
-						url: '#/team',
-						title: 'Команда'
+						url: '#/contacts',
+						title: 'Контакты'
+					}
+				],
+				titles:[
+					{
+						title: 'Главная'
 					},
 					{
-						url: '#/contacts',
+						title: 'Рейтинг'
+					},
+					{
+						title: 'Лучшие работы'
+					},
+					{
 						title: 'Контакты'
 					}
 				],
@@ -174,60 +183,51 @@
 				this.dotClass.bottom = false;
 			},
 			locationSetup(){
-				let current = window.location.hash;
-				let index; 
-				if (current != '#/404'){				
-					for(let i = 0; i < this.views.length; i++){
-						if (this.views[i].url == current){
-							index = i;
+
+				if (this.$route.meta.parent){
+					let current = window.location.hash;
+					let index; 
+					if (current != '#/404'){				
+						for(let i = 0; i < this.views.length; i++){
+							if (this.views[i].url == current){
+								index = i;
+							}
 						}
-					}
 
-					this.current = '0'+(index+1);
-					this.last = '0'+this.views.length;
-					this.title = this.views[index].title;
+						this.current = '0'+(index+1);
+						this.last = '0'+this.views.length;
+						// this.title = this.views[index].title;
 
 
-					if (index == 0){
-						// this.back = this.views[this.views.length - 1].url;
-						this.next = this.views[index + 1].url;
-						$('.prev').fadeOut(300);
-						$('.next').fadeIn(300);
-					} else if(index == this.views.length - 1){
-						this.back = this.views[index - 1].url;
-						// this.next = this.views[0].url;
-						$('.next').fadeOut(300);
-						$('.prev').fadeIn(300);
-					} else {
-						this.back = this.views[index - 1].url;
-						this.next = this.views[index + 1].url;
-						if ($(window).width() < 700){
-							$('.next').fadeIn(300, function(){
-								$('.prev').fadeOut(300);
-							});
-						} else {
-							$('.prev').fadeIn(300);
+						if (index == 0){
+							// this.back = this.views[this.views.length - 1].url;
+							this.next = this.views[index + 1].url;
+							$('.prev').fadeOut(300);
 							$('.next').fadeIn(300);
+						} else if(index == this.views.length - 1){
+							this.back = this.views[index - 1].url;
+							// this.next = this.views[0].url;
+							$('.next').fadeOut(300);
+							$('.prev').fadeIn(300);
+						} else {
+							this.back = this.views[index - 1].url;
+							this.next = this.views[index + 1].url;
+							if ($(window).width() < 700){
+								$('.next').fadeIn(300, function(){
+									$('.prev').fadeOut(300);
+								});
+							} else {
+								$('.prev').fadeIn(300);
+								$('.next').fadeIn(300);
+							}
 						}
 					}
 				}
-
-
-				// if ($(window).width() < 700){
-				// 	if (this.current == '04'){
-				// 		$('.next').fadeOut(300, function(){
-				// 			$('.prev').fadeIn(300);
-				// 		});
-				// 	} else {
-				// 		$('.prev').fadeOut(300, function(){
-				// 			$('.next').fadeIn(300);
-				// 		});
-				// 	}
-				// }
 			},
 			lineAnimation(){
+				console.log('1');
 				this.update = true;
-				setTimeout(() => {$('.page-title span').text(this.title);}, 100);
+				setTimeout(() => {$('.page-title span').text(this.$route.meta.title);}, 100);
 				setTimeout(() => {this.update = false}, 700);
 			},
 			video(){
@@ -263,7 +263,7 @@
 			},
 			touch_move(event){
 				let self = this;
-				if ($(window).width() < 1030){
+				if ($(window).width() < 1030 && self.$route.meta.parent){
 					if (event.additionalEvent == 'panup' || event.additionalEvent == 'pandown'){
 						let deltaOfInterest = event.deltaY,
 							timeNow = new Date().getTime(),
@@ -344,10 +344,11 @@
 			$(document).bind('mousewheel DOMMouseScroll', function(event) {
 				let delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
 				event.preventDefault();
-				if (self.scroll){
+				if (self.scroll && self.$route.meta.parent){
 					init_scroll(event, delta);
 				}
 			});
+			
 			function init_scroll(event, delta) {
 				let deltaOfInterest = delta,
 					timeNow = new Date().getTime(),

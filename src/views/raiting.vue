@@ -2,8 +2,8 @@
 	transition(v-on:enter="startAnimate" v-on:before-enter="beforeAnimate" v-on:leave="leaveAnimate" appear mode="out-in")
 		section.raiting-view
 			.col.off
-				.name.off В рейтинге<br>Tagline
-				.name.off Работаем <br>с 2009 г.	
+				.name.off В рейтинге<br>Tagline #[span Работаем с 2009 г.]
+				router-link.name.off(to="/team") Команда
 			.col.off
 				.content.off
 					.line
@@ -66,10 +66,14 @@
 				}, 350)
 				$(this.$el).find('.content').toggleClass('in off');
 				$(this.$el).find('.name').toggleClass('in off');
+
 				setTimeout(() => {
 					done();
 				},800);
 			}
+		},
+		mounted(){
+			
 		}
 	}
 </script>
@@ -83,7 +87,7 @@
 		transform: translate(-50%,-50%);
 		width: 82%;
 		height: 76%;
-		transition: all .55s;
+		transition: all .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -129,16 +133,16 @@
 				flex-direction: column;
 				align-items: center;
 				opacity: 0;
-				transition: all .35s;
+				transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 				&.in{
 					opacity: 1;
 					transform: translate(-50%,-50%);
-					transition: all .35s .82s;
+					transition: all .35s .82s cubic-bezier(0.215, 0.61, 0.355, 1);
 				}
 				&.off{
 					opacity: 0;
 					transform: translate(-100%,-50%);
-					transition: all .35s;
+					transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 				}
 				.line{
 					width: 70px;
@@ -175,21 +179,31 @@
 					font-size: 26px;
 					line-height: 150%;
 					opacity: 0;
-					transition: all .35s;
+					transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
+					span{
+						display: block;
+						margin-top: 40px;
+					    text-decoration: none;
+   						line-height: 150%;
+    					font-size: 15px;
+    					opacity: 0.35;
+					}
 					&:nth-child(2){
 						bottom: 16.5%;
 						top: auto;
+						font-size: 18px;
+						text-decoration: none;
 					}
 					&.in{
 						opacity: 1;
 						left: 32%;
-						transition: all .35s .55s;
+						transition: all .35s .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 
 					}
 					&.off{
 						opacity: 0;
 						left: 21%;
-						transition: all .35s;
+						transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 					}
 				}
 			}

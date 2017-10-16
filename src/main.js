@@ -18,20 +18,26 @@ Vue.use(VueTouch);
 Vue.use(VeeValidate);
 
 
-let router = new VueRouter({
+const router = new VueRouter({
 	routes:[
 		{ 
       path: '/', 
-      component: start
+      component: start,
+      meta: {title: 'Главная', parent: true}
     },
-		{ path: '/raiting', component: raiting},
-		{ path: '/works', component: works },
-		{ path: '/contacts', component: contacts},
-    { path: '/team', component: team},
-    { path: '/team/:id', component: team_member},
-    { path: '/404', component: fail},
+		{ path: '/raiting', component: raiting, meta: {title: 'Рейтинг', parent: true}},
+		{ path: '/works', component: works, meta: {title: 'Лучшие работы', parent: true}},
+		{ path: '/contacts', component: contacts, meta: {title: 'Контакты', parent: true}},
+    { path: '/team', component: team, meta: {title: 'Команда', parent: false}},
+    { path: '/team/:id', component: team_member, meta: {title: 'Команда', parent: false}},
+    { path: '/404', component: fail, meta: {title: 'Ошибка', parent: true}},
     { path: '*', redirect: '/404' }
 	]
+});
+
+router.beforeEach((to, from, next) => {
+  setTimeout(() => {$('.page-title span').text(to.meta.title);}, 100);
+  next();
 });
 
 let App = new Vue({

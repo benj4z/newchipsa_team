@@ -53,7 +53,7 @@
 							method:'post',
 							data: data,
 							success: function(data){
-								console.log(data);
+								yaCounter36856355.reachGoal('piska');
 								$('.order-container form').fadeOut(300, function(){
 									$('.sucsess').fadeIn(300);
 								})
@@ -253,6 +253,9 @@
 	}
 
 	@media (max-width: 1025px){
+		.order-container{
+			top: 46%;
+		}
 		.order-container .budget .text{
 		    width: 315px;
 	        margin-right: 0%;

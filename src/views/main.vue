@@ -7,13 +7,13 @@
 						span
 					div#player
 						iframe.ytplayer(id="ytplayer" type="text/html" width="100%" height="100%"
-						src="https://www.youtube.com/embed/8kRuFMWuAjY?enablejsapi=1"
+						src="https://www.youtube.com/embed/TehxguHmXsY?enablejsapi=1"
 						frameborder="0" allowfullscreen)
 			.small-view.animated.offScreen
 				h1.offScreen Покажем вас <br>в новом свете
 				p.offScreen Делаем сайты с проработанной анимацией и крутым графическим контентом (фото, видео, иллюстрации, 3D)
 				a.desktop-showreel(href="#").offScreen Смотреть шоурил
-				a.mobile-showreel(href="https://www.youtube.com/watch?v=8kRuFMWuAjY", target="_blank").offScreen Смотреть шоурил 
+				a.mobile-showreel(href="https://www.youtube.com/watch?v=TehxguHmXsY", target="_blank").offScreen Смотреть шоурил 
 </template>
 
 <script>
@@ -135,7 +135,7 @@
 		height: 0%;
 		opacity: 0;
 		background-color: rgba(#000, 0.5);
-		transition: all .55s;
+		transition: all .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 		&.onScreen{
 			height: 76%;
 			opacity: 1;
@@ -154,11 +154,11 @@
 			font-weight: 200;
 			transform: translateX(-25px);
 			opacity: 0;
-			transition: all .45s;
+			transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.onScreen{
 				transform: translateX(0px);
 				opacity: 1;
-				transition: all .45s .55s;
+				transition: all .45s .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 			}
 		}
 		p{
@@ -173,11 +173,11 @@
 			width: 270px;
 			transform: translateX(-25px);
 			opacity: 0;
-			transition: all .45s;
+			transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.onScreen{
 				transform: translateX(0px);
 				opacity: 1;
-				transition: all .45s .55s;
+				transition: all .45s .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 			}
 		}
 		a{
@@ -190,11 +190,11 @@
 			cursor: pointer;
 			transform: translateX(-25px);
 			opacity: 0;
-			transition: all .45s;
+			transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.onScreen{
 				transform: translateX(0px);
 				opacity: 1;
-				transition: all .45s .55s;
+				transition: all .45s .55s cubic-bezier(0.215, 0.61, 0.355, 1);
 			}
 		}
 	}

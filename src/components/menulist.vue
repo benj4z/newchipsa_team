@@ -183,6 +183,9 @@
 </script>
 
 <style lang="scss">
+	.menu-modal{
+		z-index: 2;
+	}
 	.mobile-social{
 		display: none;
 	}

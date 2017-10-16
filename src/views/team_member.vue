@@ -5,6 +5,8 @@
 				.overlay
 			section
 				.small-view.team.animated.offScreen
+					router-link(to="/team").back-button.abs-vert-center.menu-link.active
+						span
 					.member-info
 						.half
 							.personal
@@ -35,33 +37,31 @@
 		},
 		methods:{
 			startAnimate(el, done){
+				$('.ui-paginator').hide();
+				$('.ui-view-switcher').hide();
 				setTimeout(() => {
 					$(this.$el).find('.small-view').toggleClass('onScreen offScreen');
-					$(this.$el).find('h1').toggleClass('onScreen offScreen');
-					$(this.$el).find('p').toggleClass('onScreen offScreen');
 					$(this.$el).find('.background-pic').toggleClass('onScreen offScreen');
-
 					done();
-				}, 700);
+				}, 125);
 			},
 			beforeAnimate(){
 				$(this.$el).find('.small-view').removeClass('onScreen');
-				$(this.$el).find('h1').removeClass('onScreen');
-				$(this.$el).find('p').removeClass('onScreen');
 				$(this.$el).find('.background-pic').removeClass('onScreen');
-
 			},
 			leaveAnimate(el, done){
+				$('.ui-paginator').show();
+				$('.ui-view-switcher').show();
+
 				setTimeout(() => {$(this.$el).find('.small-view').toggleClass('onScreen offScreen');}, 350)
-				$(this.$el).find('h1').toggleClass('onScreen offScreen');
-				$(this.$el).find('p').toggleClass('onScreen offScreen');
 				$(this.$el).find('.background-pic').toggleClass('onScreen offScreen');
 
 				setTimeout(() => {
 					done();
-				},700);
+				}, 700);
 			},
 		},
+
 		created(){
 			const path = this.$route.path;
             const data_src = 'src/data' + path + '/data.json';
@@ -78,7 +78,13 @@
 </script>
 
 <style lang="scss" scoped>
-	
+	.back-button{
+		position: absolute;
+		right: -5%;
+		top: 6.5%;
+		left: auto;
+		opacity: 1;
+	}
 	.fullpage{
 		position: relative;
 		width: 100%;
@@ -97,7 +103,7 @@
 		width: 100%;
 		height: 100%;
 		opacity: 1;
-		transition: all .99s;
+		transition: all .99s cubic-bezier(0.215, 0.61, 0.355, 1);
 		background-position: center 0;
 		background-size: cover;
 		.overlay{
@@ -120,6 +126,13 @@
 	}
 	.small-view{
 		background-color: transparent;
+		transition: all .55s cubic-bezier(0.215, 0.61, 0.355, 1);
+		&.onScreen{
+			opacity: 1;
+		}
+		&.offScreen{
+			height: 0;
+		}
 	}
 	.member-info{
 		width: 84%;
@@ -149,6 +162,7 @@
 				}
 				.rank{
 					font-size: 18px;
+					opacity: 0.35;
 				}
 			}
 			.quote{
@@ -156,13 +170,13 @@
 				line-height: 150%;
 			}
 			.award{
-				margin-bottom: 20px;
+				margin-bottom: 30px;
 				&:last-child{
 					margin-bottom: 0px;
 				}
 				img{
 					display: inline-block;
-					width: 15%;
+					width: 10%;
 					margin-right: 5%;
 					vertical-align: middle;
 				}
@@ -170,7 +184,7 @@
 					font-size: 14px;
 					color: #fff;
 					opacity: 0.45;
-					width: 75%;
+					width: 55%;
 					display: inline-block;
 					vertical-align: middle;
 				}
@@ -180,6 +194,7 @@
 				list-style: none;
 				li{
 					margin-bottom: 12px;
+					font-size: 16px;
 				}
 			}
 			.email{
