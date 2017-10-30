@@ -19,13 +19,15 @@ export default{
 	methods:{
 		logoAnimation: function(){
 			var self = this;
-			$(this.$el).find('.overlay-block').animate({'width': '0%'}, 2000, function(){
+			$(this.$el).find('.overlay-block').animate({'width': '0%'}, 2500, function(){
 				self.loadedOnce = false;
 			});
 		}
 	},
 	mounted() {
-		this.logoAnimation();
+		setTimeout(() => {
+			this.logoAnimation();
+		}, 0)
 	}
 }
 
