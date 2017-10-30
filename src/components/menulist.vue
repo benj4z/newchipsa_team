@@ -4,7 +4,7 @@
 			//- v-touch(v-on:pan="move($event)")
 			ul(@mousemove="move($event)" v-bind:style="{ marginTop: top + 'px'}")
 				li(v-for="(link, index) in links" @click="showWorks" v-bind:data-index="index")
-					<a v-bind:href="link.url" v-if="index == 2" target="_blank">{{ link.name }}</a>
+					<a v-bind:href="link.url" v-if="link.name == 'Блог'" target="_blank">{{ link.name }}</a>
 					<a v-bind:href="link.url" v-else>{{ link.name }}</a>
 		transition(name="works")
 			.works-container(v-show="worksIn")
@@ -37,6 +37,10 @@
 					{
 						name: 'Работы',
 						url: '#/works'
+					},
+					{
+						name: 'Команда',
+						url: '#/team'
 					},
 					{
 						name: 'Блог',
@@ -128,12 +132,10 @@
 
 					let top = (((rest_h*percent_y)/100) * -1) + 50;
 					this.top = top;
-					console.log(event);
 
 				}
 			},
 			touch_move(event){
-				console.log(event)
 			},
 			listAppear(){
 				// Пишу на JQ так как не совсем понимаю работу Vue с дом и вообще анимацией в целом

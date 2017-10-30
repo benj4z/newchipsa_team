@@ -84,6 +84,11 @@
 		top: 6.5%;
 		left: auto;
 		opacity: 1;
+		transition: all .35s;
+		transform-origin: 0px 0px 0px;
+		&:hover{
+			transform: rotate(90deg);
+		}
 	}
 	.fullpage{
 		position: relative;
@@ -238,10 +243,14 @@
 		}
 		.member-info .half .award span{
 			width: 66%;
+			vertical-align: top;
 		}
 		.background-pic .overlay{
 			background-color: rgba(0,0,0,.25);	
 			display: block;
+		}
+		.member-info .half .award img{
+			vertical-align: top;
 		}
 	}
 
@@ -282,6 +291,7 @@
 		.background-pic.onScreen{
 			transform: scale(1);
 		}
+
 		.background-pic{
 			background-position: 30% 0;
 		}
@@ -309,6 +319,9 @@
 		.member-info .half .skills li{
 			font-size: 14px;
 			margin-bottom: 5px;
+		}
+		.back-button{
+			z-index: 2;
 		}
 	}
 

@@ -329,5 +329,11 @@
 		.raiting-view .col:first-child .name:nth-child(2){
 			top: 32%!important;
 		}
+		.raiting-view .col:first-child .name{
+			line-height: 110%;
+		}
+		.raiting-view .col:first-child .name span{
+			margin-top: 10px;
+		}
 	}
 </style>

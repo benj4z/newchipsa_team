@@ -173,15 +173,15 @@
 				setTimeout(() => {
 					done();
 				}, 800);
-			}
-		},
-		created(){
-			let bgImg = [];
-			for (let i = 0; i < this.works.length; i++){
-				let last = this.works[i].img.length - 1;
-				var src = this.works[i].img.slice(4, last);
-				bgImg[i] = new Image();
-				bgImg[i].src = src;
+			},
+			loadImages(){
+				let bgImg = [];
+				for (let i = 0; i < this.works.length; i++){
+					let last = this.works[i].img.length - 1;
+					var src = this.works[i].img.slice(4, last);
+					bgImg[i] = new Image();
+					bgImg[i].src = src;
+				}
 			}
 		},
 		mounted(){
@@ -201,6 +201,10 @@
 			    }
 			    self.img = self.works[id].img;
 			})
+
+			setTimeout(() => {
+				this.loadImages();
+			}, 1000);
 		}
 	}
 </script>

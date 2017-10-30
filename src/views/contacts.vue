@@ -274,12 +274,12 @@
 				setTimeout(() => {
 					done();
 				},700);
-			}
-		},
-		created(){
-			let bgImg = new Image();
-			for (let i = 1; i < this.maps.length+1; i++){
-				bgImg.src = 'src/assets/map'+i+'.jpg';
+			},
+			loadImages(){
+				let bgImg = new Image();
+				for (let i = 1; i < this.maps.length+1; i++){
+					bgImg.src = 'src/assets/map'+i+'.jpg';
+				}
 			}
 		},
 		mounted(){

@@ -4,8 +4,6 @@
 			.background-pic.common
 			section
 				.small-view.team.animated.offScreen
-					router-link(to="/raiting").back-button.abs-vert-center.menu-link.active
-						span
 					.team-header.offScreen
 						h2 {{ tab_title }}
 						ul.worker-switch
@@ -13,6 +11,8 @@
 								button Штатные сотрудники
 							li(v-bind:class='{ active: !main_roster }' @click="switchRoster")
 								button Внештатные сотрудники
+						router-link(to="/raiting").back-button.abs-vert-center.menu-link.active
+							span
 					.team-content.offScreen(v-if="team_data && Object.keys(team_data).length")
 						transition(name='fade')
 							.team-container(v-show="main_roster" mode="out-in")
@@ -113,6 +113,11 @@
 		top: 12.4%;
 		left: auto;
 		opacity: 1;
+		transition: all .35s;
+		transform-origin: 0px 0px 0px;
+		&:hover{
+			transform: rotate(90deg);
+		}
 	}
 	.fullpage{
 		position: relative;
@@ -148,8 +153,13 @@
 		.team-header{
 			display: flex;
 			align-items: flex-end;
+			position: relative;
 			margin-top: 5%;
 			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
+			.back-button{
+				top: auto;
+				bottom: 0px;
+			}
 			&.offScreen{
 				opacity: 0;
 			}
@@ -248,6 +258,9 @@
 		.team .team-header{
 			margin-top: 2%;
 		}
+		.team .team-header h2{
+			font-size: 3vw;
+		}
 		.team .team-content .team-item .name {
 		    width: 45%;
 		    font-size: 18px;
@@ -256,6 +269,9 @@
 		}
 		.team .team-content .team-item{
 			margin-bottom: 4%;
+		}
+		.team .team-header .worker-switch li{
+			margin-right: 20px;
 		}
 	}
 
@@ -267,13 +283,13 @@
 			font-size: 16px;
 		}
 		.team .team-header .worker-switch li{
-			margin-right: 20px;
+			margin-right: 0px;
 		}
 		.team .team-header .worker-switch li:last-child{
 			margin-right: 0px;
 		}
 		.team .team-content{
-			margin-top: 70px;
+			margin-top: 50px;
 		}
 		.team .team-content .team-item{
 			margin-bottom: 6%;
@@ -291,6 +307,9 @@
 			width: 33%;
 			margin-bottom: 10%;
 		}
+		.team .team-content .team-item .rank{
+			width: 70%;
+		}
 	}
 
 	@media (max-width: 469px){
@@ -298,8 +317,15 @@
 			flex-flow: row wrap;
 			margin-top: 0px;
 		}
+		.back-button{
+			right: -8%;
+			z-index: 2;
+		}
 		.team .team-header .worker-switch li button{
 			padding: 0px;
+		}
+		.team .team-header .worker-switch li{
+			width: 100%;
 		}
 		.team .team-header h2{
 			width: 100%;
@@ -317,14 +343,26 @@
 		.team .team-content{
 			margin-top: 40px;
 		}
+		.team .team-content .team-item{
+			margin-bottom: 20px;
+		}
 		.team .team-content .team-item .name{
-			width: 100%;
+			width: 95%;
 			font-size: 16px;
 			margin-bottom: 10px;
 		}
 		.team .team-content .team-item .rank{
 			width: 90%;
 			font-size: 14px;
+		}
+		.team .team-header .back-button{
+			bottom: 8px;
+		}
+		.team .team-content .team-container{
+			position: static;
+		}
+		.small-view.onScreen{
+			overflow-y: scroll;
 		}
 	}
 	@media (max-width: 321px){
