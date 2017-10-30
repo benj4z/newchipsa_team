@@ -184,6 +184,11 @@
 				}
 			}
 		},
+		created(){
+			/*setTimeout(() => {
+				this.loadImages();
+			}, 1500);*/
+		},
 		mounted(){
 			let self = this;
 			this.owlInit();
@@ -202,9 +207,7 @@
 			    self.img = self.works[id].img;
 			})
 
-			setTimeout(() => {
-				this.loadImages();
-			}, 1000);
+			
 		}
 	}
 </script>
