@@ -19,7 +19,7 @@ export default{
 	methods:{
 		logoAnimation: function(){
 			var self = this;
-			$(this.$el).find('.overlay-block').animate({'width': '0%'}, 1000, function(){
+			$(this.$el).find('.overlay-block').animate({'width': '0%'}, 2000, function(){
 				self.loadedOnce = false;
 			});
 		}

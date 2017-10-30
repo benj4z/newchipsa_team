@@ -25,7 +25,7 @@ const router = new VueRouter({
       component: start,
       meta: {title: 'Главная', parent: true}
     },
-		{ path: '/raiting', component: raiting, meta: {title: 'Рейтинг', parent: true}},
+		{ path: '/raiting', component: raiting, meta: {title: 'О нас', parent: true}},
 		{ path: '/works', component: works, meta: {title: 'Лучшие работы', parent: true}},
 		{ path: '/contacts', component: contacts, meta: {title: 'Контакты', parent: true}},
     { path: '/team', component: team, meta: {title: 'Команда', parent: false}},
