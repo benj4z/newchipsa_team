@@ -225,7 +225,6 @@
 				}
 			},
 			lineAnimation(){
-				console.log('1');
 				this.update = true;
 				setTimeout(() => {$('.page-title span').text(this.$route.meta.title);}, 100);
 				setTimeout(() => {this.update = false}, 700);

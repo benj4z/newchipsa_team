@@ -114,9 +114,10 @@
 		left: auto;
 		opacity: 1;
 		transition: all .35s;
-		transform-origin: 0px 0px 0px;
+		transform: translate(0px, 0px);
+		transform-origin: center;
 		&:hover{
-			transform: rotate(90deg);
+			transform: rotate(90deg) translate(0px, 0px);
 		}
 	}
 	.fullpage{
@@ -310,15 +311,17 @@
 		.team .team-content .team-item .rank{
 			width: 70%;
 		}
+
 	}
 
 	@media (max-width: 469px){
+
 		.team .team-header{
 			flex-flow: row wrap;
 			margin-top: 0px;
 		}
 		.back-button{
-			right: -8%;
+			right: 0%;
 			z-index: 2;
 		}
 		.team .team-header .worker-switch li button{

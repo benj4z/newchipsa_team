@@ -85,9 +85,10 @@
 		left: auto;
 		opacity: 1;
 		transition: all .35s;
-		transform-origin: 0px 0px 0px;
+		transform: translate(0px, 0px);
+		transform-origin: center;
 		&:hover{
-			transform: rotate(90deg);
+			transform: rotate(90deg) translate(0px, 0px);
 		}
 	}
 	.fullpage{
@@ -285,13 +286,16 @@
 		.background-pic .overlay{
 			background-color: rgba(0,0,0,.35);	
 		}
+
 	}
 
 	@media (max-width: 700px){
 		.background-pic.onScreen{
 			transform: scale(1);
 		}
-
+		.back-button{
+			right: 0%;
+		}
 		.background-pic{
 			background-position: 30% 0;
 		}

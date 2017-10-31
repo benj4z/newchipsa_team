@@ -112,8 +112,8 @@
 						img: 'url(src/assets/w1.jpg)',
 						features: [{text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'frontend'}, {text: 'backend'}],
 						site_url: 'http://mdis.ru'
-					},
-					{
+					}
+					/*{
 						name: 'BINAR',
 						year: 2017,
 						color: '#71441b',
@@ -129,7 +129,7 @@
 						features: [{text: 'проектирование'}, {text: 'дизайн'}, {text: '3D-визуализация'}, {text: 'frontend'}, {text: 'backend'}],
 						bh_url: 'https://www.behance.net/gallery/43335773/Siberian-Generating-Company-web',
 						site_url: 'http://sibgenco.ru/'
-					}
+					}*/
 				],
 				owl: '',
 				prevDisabled: true,
@@ -185,27 +185,30 @@
 			}
 		},
 		created(){
-			/*setTimeout(() => {
+			setTimeout(() => {
 				this.loadImages();
-			}, 1500);*/
+				
+			}, 1000);
 		},
 		mounted(){
 			let self = this;
-			this.owlInit();
-			this.owl.on('changed.owl.carousel', function(event) {
-			    let id = $('.owl-dot.active').index();
-			    if (id == 0) {
-			    	self.prevDisabled = true;
-			    } else {
-			    	self.prevDisabled = false;
-			    }
-			    if (id == self.works.length-1){
-			    	self.nextDisabled = true;
-			    } else {
-			    	self.nextDisabled = false;
-			    }
-			    self.img = self.works[id].img;
-			})
+			setTimeout(() => {
+				this.owlInit();
+				this.owl.on('changed.owl.carousel', function(event) {
+				    let id = $('.owl-dot.active').index();
+				    if (id == 0) {
+				    	self.prevDisabled = true;
+				    } else {
+				    	self.prevDisabled = false;
+				    }
+				    if (id == self.works.length-1){
+				    	self.nextDisabled = true;
+				    } else {
+				    	self.nextDisabled = false;
+				    }
+				    self.img = self.works[id].img;
+				})
+			}, 0)
 
 			
 		}
@@ -242,6 +245,9 @@
 		height: 100vh;
 		position: relative;
 		overflow: hidden;
+	}
+	.owl-carousel{
+		display: block;
 	}
 	.item{
 		position: relative;

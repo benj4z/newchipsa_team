@@ -43,10 +43,6 @@
 						url: '#/team'
 					},
 					{
-						name: 'Блог',
-						url: 'http://blog.chipsa.ru/'
-					},
-					{
 						name: 'Контакты',
 						url: '#/contacts'
 					}
