@@ -50,8 +50,8 @@
 			.line(v-bind:class="{ toBottom: update }")
 			.current {{ current }}
 
-		.divvideo
-			video(src="src/assets/ChipsaBack.mov" autoplay loop muted poster="src/assets/first_frame.jpg")
+		//- .divvideo
+		//- 	video(src="src/assets/ChipsaBack.mov" autoplay loop muted poster="src/assets/first_frame.jpg")
 		v-touch.fillheight(v-on:pan="touch_move")
 			router-view
 
