@@ -1,5 +1,5 @@
 <template lang="pug">
-	transition(v-on:enter="startAnimate" v-on:before-enter="beforeAnimate" v-on:leave="leaveAnimate" v-bind:css="false" appear mode="out-in")
+	transition(v-on:enter="startAnimate" v-on:before-enter="beforeAnimate" v-on:leave="leaveAnimate" appear mode="out-in")
 		section.works-block
 				.work-background.offScreen(v-bind:style="{ backgroundImage: img}")
 				.work.owl-carousel
@@ -111,7 +111,8 @@
 						color: '#ff4a4a',
 						img: 'url(src/assets/w1.jpg)',
 						features: [{text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'frontend'}, {text: 'backend'}],
-						site_url: 'http://mdis.ru'
+						site_url: 'http://mdis.ru',
+						bh_url: 'https://www.behance.net/gallery/56861115/MDIS-web',
 					}
 					/*{
 						name: 'BINAR',
@@ -185,10 +186,7 @@
 			}
 		},
 		created(){
-			setTimeout(() => {
-				this.loadImages();
-				
-			}, 1000);
+			this.loadImages();
 		},
 		mounted(){
 			let self = this;
@@ -208,7 +206,7 @@
 				    }
 				    self.img = self.works[id].img;
 				})
-			}, 0)
+			}, 600)
 
 			
 		}
@@ -224,7 +222,7 @@
 		background-position: center;
 		background-size: cover;
 		opacity: 0;
-		transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 		&.onScreen{
 			opacity: 1;
 		}
@@ -267,7 +265,7 @@
 			padding: 5% 8%;
 			position: absolute;
 			left: 0%;
-			transition: all .36s cubic-bezier(0.215, 0.61, 0.355, 1);
+			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			text-decoration: none;
 			&:before{
 				content: none;

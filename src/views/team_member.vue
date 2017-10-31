@@ -293,9 +293,7 @@
 		.background-pic.onScreen{
 			transform: scale(1);
 		}
-		.back-button{
-			right: 0%;
-		}
+		
 		.background-pic{
 			background-position: 30% 0;
 		}
