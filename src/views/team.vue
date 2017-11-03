@@ -179,6 +179,7 @@
 				width: 50%;
 				text-align: right;
 				margin: 0px;
+				padding: 0px;
 				li{
 					display: inline-block;
 					margin-right: 40px;
@@ -278,7 +279,11 @@
 
 	@media (max-width: 1025px){
 		.team .team-header h2{
-			font-size: 4.6vw;
+			font-size: 3.7vw;
+			width: 60%;
+		}
+		.team .team-header .worker-switch{
+			width: 40%;
 		}
 		.team .team-header .worker-switch li button{
 			font-size: 16px;
@@ -297,12 +302,13 @@
 		}
 	}
 
-	@media (max-width: 768px){
+	@media (max-width: 888px){
 		.team .team-header h2{
-			width: 30%;
+			width: 50%;
+			font-size: 4vw;
 		}
 		.team .team-header .worker-switch{
-			width: 70%;
+			width: 50%;
 		}
 		.team .team-content .team-item{
 			width: 33%;
@@ -329,6 +335,7 @@
 		}
 		.team .team-header .worker-switch li{
 			width: 100%;
+			margin-bottom: 5px;
 		}
 		.team .team-header h2{
 			width: 100%;
@@ -364,8 +371,8 @@
 		.team .team-content .team-container{
 			position: static;
 		}
-		.small-view.onScreen{
-			overflow-y: scroll;
+		.small-view{
+			overflow: scroll;
 		}
 	}
 	@media (max-width: 321px){

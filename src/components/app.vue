@@ -591,7 +591,7 @@
 		background-color: #000;
 	}
 	.modal-enter-active, .modal-leave-active{
-		transition: all .25s ease-in-out;
+		transition: all 1s ease-in-out;
 	}
 	.modal-enter, .modal-leave-to{
 		transform: translate3d(0,-100%,0);

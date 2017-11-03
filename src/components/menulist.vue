@@ -197,9 +197,9 @@
 		height: 100vh;
 		width: 60%;
 		overflow: hidden;
-		-webkit-transition: all .35s;
-		-o-transition: all .35s;
-		transition: all .35s;
+		-webkit-transition: all .75s;
+		-o-transition: all .75s;
+		transition: all .75s;
 		&.mobile-anim{
 		    transform: translateX(-18%);
 		} 

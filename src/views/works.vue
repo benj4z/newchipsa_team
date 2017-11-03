@@ -22,7 +22,7 @@
 							ul
 								li(v-for="feature in work.features") {{ feature.text }}
 							.year {{ work.year }}
-				.owl-controls
+				.owl-controls.offScreen
 					.owl-navs
 						.owl-nav(@click="prevSlide" v-bind:class="{disabled: prevDisabled}") предыдущая<br>
 						.owl-nav(@click="nextSlide" v-bind:class="{disabled: nextDisabled}") следующая работа
@@ -156,6 +156,7 @@
 				setTimeout(() => {
 					$(this.$el).find('.color-half').toggleClass('onScreen offScreen');
 					$(this.$el).find('.info-half').toggleClass('onScreen offScreen');
+					$(this.$el).find('.owl-controls').toggleClass('onScreen offScreen');
 					$(this.$el).find('.work-background').toggleClass('onScreen offScreen');
 					done();
 				}, 700);
@@ -163,11 +164,13 @@
 			beforeAnimate(){
 				$(this.$el).find('.color-half').removeClass('onScreen');
 				$(this.$el).find('.info-half').removeClass('onScreen');
+				$(this.$el).find('.owl-controls').removeClass('onScreen');
 				$(this.$el).find('.work-background').removeClass('onScreen');
 			},
 			leaveAnimate(el, done){
 				$(this.$el).find('.color-half').toggleClass('onScreen offScreen');
 				$(this.$el).find('.info-half').toggleClass('onScreen offScreen');
+				$(this.$el).find('.owl-controls').toggleClass('onScreen offScreen');
 				setTimeout(() => {$(this.$el).find('.work-background').toggleClass('onScreen offScreen');
 				}, 350);
 
@@ -408,6 +411,13 @@
 	    justify-content: space-between;
 	    align-items: flex-end;
 	    z-index: 1;
+	    transition: all .35s;
+	    &.onScreen{
+	    	opacity: 1;
+	    }
+	    &.offScreen{
+	    	opacity: 0;
+	    }
 	    .owl-navs{
     		.owl-nav{
     			color: #fff;
