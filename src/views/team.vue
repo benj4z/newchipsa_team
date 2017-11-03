@@ -352,11 +352,11 @@
 		}
 		.team .team-content{
 			margin-top: 40px;
+			height: 50vh;
+    		overflow: scroll;
 		}
 		.team .team-content .team-item{
 			margin-bottom: 20px;
-		    height: 50vh;
-    	overflow: scroll;
 		}
 		.team .team-content .team-item .name{
 			width: 95%;
