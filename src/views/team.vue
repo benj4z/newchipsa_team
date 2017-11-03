@@ -371,9 +371,6 @@
 		.team .team-content .team-container{
 			position: static;
 		}
-		.small-view{
-			overflow: scroll;
-		}
 	}
 	@media (max-width: 321px){
 		.team .team-header .worker-switch li{
