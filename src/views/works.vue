@@ -172,11 +172,12 @@
 				$(this.$el).find('.info-half').toggleClass('onScreen offScreen');
 				$(this.$el).find('.owl-controls').toggleClass('onScreen offScreen');
 				setTimeout(() => {$(this.$el).find('.work-background').toggleClass('onScreen offScreen');
+					this.owl.trigger('destroy.owl.carousel');
 				}, 350);
 
 				setTimeout(() => {
 					done();
-				}, 800);
+				}, 700);
 			},
 			loadImages(){
 				let bgImg = [];
@@ -209,7 +210,7 @@
 				    }
 				    self.img = self.works[id].img;
 				})
-			}, 600)
+			}, 1300)
 
 			
 		}
@@ -243,8 +244,10 @@
 	}
 	.work{
 		width: 100vw;
-		height: 100vh;
-		position: relative;
+		height: 76%;
+		top: 50%;
+		transform: translateY(-50%);		
+		position: absolute;
 		overflow: hidden;
 	}
 	.owl-carousel{
@@ -256,7 +259,7 @@
 		left: 50%;
 		transform: translate(-50%,-50%);
 		width: 82%;
-		height: 76%;
+		height: 100%;
 		display: flex;
 		.color-half{
 			width: 50%;
@@ -392,8 +395,11 @@
 			cursor: url(/src/assets/svg/cursor_left_right2.svg) 22 8, move;
 		}
 	}
+	.owl-carousel .owl-stage-outer{
+		height: 100%;
+	}
 	.owl-carousel .owl-stage{
-		height: 100vh;
+		height: 100%;
 	}
 	.owl-carousel .owl-item{
 		height: 100%;

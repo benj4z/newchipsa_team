@@ -306,13 +306,13 @@
 		}
 		.member-info .half{
 			width: 75%;
-			height: 50%;
+			height: 42%;
 			margin-bottom: 0px;
 		}
 		.member-info .half:last-child{
 			margin-bottom: 0px;
 			width: 50%;
-			height: 40%;
+			height: 50%;
 		}
 		.member-info .half .quote{
 			font-size: 18px;

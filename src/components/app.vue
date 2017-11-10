@@ -290,6 +290,8 @@
 					   
 					   self.lastAnimationTouch = timeNow;	
 					}
+				} else {
+					return false;
 				}
 			},
 			esc_close(){
