@@ -353,6 +353,8 @@
 		.team .team-content{
 			margin-top: 40px;
 			height: 49vh;
+			touch-action: auto;
+		 	-webkit-overflow-scrolling:touch;
     		overflow-y: scroll;
 		}
 		.team .team-content .team-item{
