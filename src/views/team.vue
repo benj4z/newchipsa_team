@@ -107,10 +107,6 @@
 
 <style lang="scss" scoped>
 
-	.fillheight{
-		touch-action: auto!important;
-	}
-	
 	.back-button{
 		position: absolute;
 		right: -15%;
@@ -356,8 +352,8 @@
 		}
 		.team .team-content{
 			margin-top: 40px;
-			height: 50vh;
-    		overflow: scroll;
+			height: 49vh;
+    		overflow-y: scroll;
 		}
 		.team .team-content .team-item{
 			margin-bottom: 20px;

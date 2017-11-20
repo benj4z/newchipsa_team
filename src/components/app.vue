@@ -808,6 +808,7 @@
 		height: 100%;
 		touch-action: auto!important;
 	    -webkit-user-drag: auto!important;
+	    user-select: auto!important;
 	}
 
 	@media (max-width: 1025px){
