@@ -809,6 +809,7 @@
 		touch-action: auto!important;
 	    -webkit-user-drag: auto!important;
 	    user-select: auto!important;
+	    -webkit-overflow-scrolling:touch;
 	}
 
 	@media (max-width: 1025px){

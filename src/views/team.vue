@@ -210,7 +210,7 @@
 		}
 		.team-content{
 			margin-top: 80px;
-			transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
+			// transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&.offScreen{
 				opacity: 0;
 			}
