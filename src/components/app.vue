@@ -436,7 +436,8 @@
 		width: 100vw;
 		height: 100vh;
 	}
-	body{
+	html, body{
+		height: 100%;
 		overflow: hidden;
 		font-size: 18px;
 		font-family: Northem;
