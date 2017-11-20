@@ -106,6 +106,11 @@
 </script>
 
 <style lang="scss" scoped>
+
+	.fillheight{
+		touch-action: auto!important;
+	}
+	
 	.back-button{
 		position: absolute;
 		right: -15%;

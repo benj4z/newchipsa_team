@@ -290,9 +290,7 @@
 					   
 					   self.lastAnimationTouch = timeNow;	
 					}
-				} else {
-					return false;
-				}
+				} 
 			},
 			esc_close(){
 				if (this.menuOpen){
@@ -808,6 +806,7 @@
 
 	.fillheight{
 		height: 100%;
+		touch-action: auto!important;
 	}
 
 	@media (max-width: 1025px){
