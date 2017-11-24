@@ -324,7 +324,8 @@
 		}
 		.member-info .half .quote{
 			font-size: 18px;
-			line-height: 125%;
+			line-height: 115%;
+			width: 90%;
 		}
 		.member-info .half .skills li{
 			font-size: 14px;
