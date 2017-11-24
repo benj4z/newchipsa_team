@@ -20,9 +20,7 @@
 						.half
 							ul.skills
 								li(v-for="skill in member_data.skills") {{skill}}
-							a.email(href="") {{member_data.email}}
-
-
+							a.email(:href="setEmail") {{member_data.email}}
 </template>
 
 <script>
@@ -33,6 +31,12 @@
 		data(){
 			return{
 				member_data: ''
+			}
+		},
+		computed:{
+			setEmail(){
+				this.email_link = "mailto:"+this.member_data.email;
+				return this.email_link
 			}
 		},
 		methods:{
@@ -69,6 +73,7 @@
             axios.get(data_src).
             	then(response => {
                 	this.member_data = response.data;
+                	console.log(this.member_data);
             	}).catch(error => {
                 	console.log(error);
             	});
@@ -297,6 +302,9 @@
 		.background-pic{
 			background-position: 30% 0;
 		}
+		.member-info .half .personal{
+			margin-bottom: 25px;
+		}
 		.member-info .half .personal .name{
 			font-size: 8vw;
 			margin-bottom: 10px;
@@ -306,13 +314,13 @@
 		}
 		.member-info .half{
 			width: 75%;
-			height: 42%;
+			height: 46%;
 			margin-bottom: 0px;
 		}
 		.member-info .half:last-child{
 			margin-bottom: 0px;
 			width: 50%;
-			height: 50%;
+			height: 25%;
 		}
 		.member-info .half .quote{
 			font-size: 18px;

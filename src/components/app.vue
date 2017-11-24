@@ -52,7 +52,7 @@
 
 		.divvideo
 			video(src="src/assets/ChipsaBack.mov" autoplay loop muted poster="src/assets/first_frame.jpg")
-		v-touch.fillheight(v-on:pan="touch_move")
+		v-touch.fillheight(v-on:pan="touch_move" ref="tapper")
 			router-view
 
 </template>
@@ -183,7 +183,6 @@
 				this.dotClass.bottom = false;
 			},
 			locationSetup(){
-
 				if (this.$route.meta.parent){
 					let current = window.location.hash;
 					let index; 
@@ -222,6 +221,13 @@
 							}
 						}
 					}
+				}
+			},
+			disablePan(){
+				if (!this.$route.meta.parent){
+					this.$refs.tapper.disable('pan');
+				} else {
+					this.$refs.tapper.enable('pan');
 				}
 			},
 			lineAnimation(){
@@ -290,7 +296,9 @@
 					   
 					   self.lastAnimationTouch = timeNow;	
 					}
-				} 
+				} else {
+					console.log('This is not touch element')
+				}
 			},
 			esc_close(){
 				if (this.menuOpen){
@@ -384,6 +392,7 @@
 			this.locationSetup();
 			this.showSocials();
 			this.showAgima();
+			this.disablePan();
 		},
 		components:{
 			menulist,

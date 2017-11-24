@@ -3,7 +3,7 @@
 		section.works-block
 				.work-background.offScreen(v-bind:style="{ backgroundImage: img}")
 				.work.owl-carousel
-					.item(v-for="work in works")
+					.item(v-for="work in data.works")
 						.color-half.offScreen(href="#" v-bind:style="{ backgroundColor: work.color }")
 							a(v-bind:href="work.site_url", target="_blank" v-if="work.site_url").top-links
 								h2 {{work.name}}
@@ -33,109 +33,24 @@
 </template>
 
 <script>
+
+	import axios from 'axios'
+
 	export default{
 		name: 'works-block',
 		data(){
 			return{
-				works:[
-					{
-						name: 'Частная лавочка',
-						year: 2017,
-						color: '#d56b4f',
-						img: 'url(src/assets/w8.jpg)',
-						features: [{ text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'фото'}, {text: 'поддержка'}, {text: 'frontend'}, {text: 'backend'}],
-						bh_url: 'https://www.behance.net/gallery/56018341/Private-shop-web',
-						site_url: 'http://lavochkamarket.ru'
-					},
-					{
-						name: 'TEXX',
-						year: 2017,
-						color: '#2f2f2f',
-						img: 'url(src/assets/w7.jpg)',
-						features: [{ text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'графический контент'}, {text: 'frontend'}, {text: 'backend'}],
-						bh_url: 'https://www.behance.net/gallery/55437297/Texx-web',
-						awards: [
-							{
-								text: 'Best of Behance gallery',
-								link: 'https://www.behance.net/gallery/55437297/Texx-web'
-							}
-						]
-					},
-					{
-						name: 'FURNITA',
-						year: 2017,
-						color: '#333131',
-						img: 'url(src/assets/w6.jpg)',
-						features: [{ text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}],
-						bh_url: 'https://www.behance.net/gallery/54218875/furnita-web',
-						awards: [
-							{
-								text: 'Best of Behance gallery',
-								link: 'https://www.behance.net/gallery/54218875/furnita-web'
-							}
-						]
-					},
-					{
-						name: 'BALANCE',
-						year: 2017,
-						color: '#09192D',
-						img: 'url(src/assets/w2.jpg)',
-						features: [{ text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'frontend'}, {text: 'backend'}, {text: 'поддержка'}],
-						bh_url: 'https://www.behance.net/gallery/50503185/Balance-web',
-						site_url: 'http://fitnessbalance.ru/',
-						awards: [
-							{	
-								text: 'CSSDA — Special Design Kudos Awarded, 2017',
-								link: 'http://www.cssdesignawards.com/sites/balance/30784'
-							}
-						]
-					},
-					{
-						name: 'АВАКС',
-						year: 2017,
-						color: '#3ab9db',
-						img: 'url(src/assets/w3.jpg)',
-						features: [{text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'видео'}, {text: '3D-визуаилизация'}, {text: 'frontend'}, {text: 'backend'}], 
-						bh_url: 'https://www.behance.net/gallery/54385533/Avaks-logo-web-cgi',
-						site_url: 'http://uav-siberia.com',
-						awards: [
-							{	
-								text: 'Рейтинг Рунета — 3-е место в номинации «Промышленность и оборудование», 2017',
-								link: 'http://awards.ratingruneta.ru/winners/'
-							}
-						]
-					},
-					{
-						name: 'MDIS',
-						year: 2017,
-						color: '#ff4a4a',
-						img: 'url(src/assets/w1.jpg)',
-						features: [{text: 'проектирование'}, {text: 'дизайн'}, {text: 'motion дизайн'}, {text: 'frontend'}, {text: 'backend'}],
-						site_url: 'http://mdis.ru',
-						bh_url: 'https://www.behance.net/gallery/56861115/MDIS-web',
-					}
-					/*{
-						name: 'BINAR',
-						year: 2017,
-						color: '#71441b',
-						img: 'url(src/assets/w4.jpg)',
-						features: [{text: 'брендинг'}, {text: 'проектирование'}, {text: 'дизайн'}, { text: 'motion дизайн'}, {text: 'графический контент'}, {text: 'frontend'}, {text: 'backend'}],
-						bh_url: 'https://www.behance.net/gallery/51493201/Binar-branding-web'
-					},
-					{
-						name: 'СГК',
-						year: 2015,
-						color: '#7b8898',
-						img: 'url(src/assets/w5.jpg)',
-						features: [{text: 'проектирование'}, {text: 'дизайн'}, {text: '3D-визуализация'}, {text: 'frontend'}, {text: 'backend'}],
-						bh_url: 'https://www.behance.net/gallery/43335773/Siberian-Generating-Company-web',
-						site_url: 'http://sibgenco.ru/'
-					}*/
-				],
+				data: {},
 				owl: '',
 				prevDisabled: true,
 				nextDisabled: false,
-				img: 'url(src/assets/w8.jpg)'
+				img: ''
+			}
+		},
+		computed:{
+			getFirstImg(){
+				this.img = this.data.works[0].img;
+				return this.img
 			}
 		},
 		methods:{
@@ -181,16 +96,25 @@
 			},
 			loadImages(){
 				let bgImg = [];
-				for (let i = 0; i < this.works.length; i++){
-					let last = this.works[i].img.length - 1;
-					var src = this.works[i].img.slice(4, last);
+				for (let i = 0; i < this.data.works.length; i++){
+					let last = this.data.works[i].img.length - 1;
+					var src = this.data.works[i].img.slice(4, last);
 					bgImg[i] = new Image();
 					bgImg[i].src = src;
 				}
 			}
 		},
 		created(){
-			this.loadImages();
+            const data_src = 'src/data/works/data.json';
+            
+            axios.get(data_src).
+            	then(response => {
+                	this.data = response.data;
+                	this.loadImages();
+                	this.getFirstImg();
+            	}).catch(error => {
+                	console.log(error);
+            	});
 		},
 		mounted(){
 			let self = this;
@@ -203,12 +127,12 @@
 				    } else {
 				    	self.prevDisabled = false;
 				    }
-				    if (id == self.works.length-1){
+				    if (id == self.data.works.length-1){
 				    	self.nextDisabled = true;
 				    } else {
 				    	self.nextDisabled = false;
 				    }
-				    self.img = self.works[id].img;
+				    self.img = self.data.works[id].img;
 				})
 			}, 1300)
 

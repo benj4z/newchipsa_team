@@ -1,0 +1,7 @@
+{
+	"name": "Владимир Игнатенко",
+	"rank": "Junior Designer",
+	"descr": "Любит работать так, как никто другой. Усидчив и старателен.",
+	"img": "url(public/vova.jpg)",
+	"skills":["UI/UX", "Motion дизайн"]
+}

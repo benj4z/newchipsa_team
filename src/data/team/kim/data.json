@@ -1,0 +1,21 @@
+{
+	"name": "Кирилл Ким",
+	"rank": "Senior Designer",
+	"descr": "Уникальное сочетание скорости выполнения, качества реализации и креатива.",
+	"awards": [
+		{
+			"img": "public/achivements/aiga.png",
+			"award_text": "AIGA featuring"
+		},
+		{
+			"img": "public/achivements/in.png",
+			"award_text": "Interaction featuring"
+		},
+		{
+			"img": "public/achivements/be.png",
+			"award_text": "Best on Behance featuring"
+		}
+	],
+	"img": "url(public/kirill.jpg)",
+	"skills":["UI/UX", "Motion дизайн", "Брендинг"]
+}

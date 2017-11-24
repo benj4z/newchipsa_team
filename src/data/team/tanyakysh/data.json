@@ -1,0 +1,9 @@
+{
+	"name": "Татьяна Кыштымова",
+	"rank": "Project Manager",
+	"descr": "Отвечает за порядок в документах. Самый ответственный менеджер.",
+	"awards": [],
+	"img": "url(public/tanya.jpg)",
+	"email": "manager@chipsa.ru ",
+	"skills":["Ведение проектов", "Составление договоров"]
+}

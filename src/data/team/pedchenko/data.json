@@ -1,0 +1,17 @@
+{
+	"name": "Александр Педченко",
+	"rank": "Art Director, CGI Designer",
+	"descr": "Самый опытный дизайнер в студии. Всегда стремится к идеалу.",
+	"awards": [
+		{
+			"img": "public/achivements/aic.png",
+			"award_text": "Прошел курс UX Design от студии AIC (диплом с отличием)"
+		},
+		{
+			"img": "public/achivements/aiga.png",
+			"award_text": "AIGA featuring at Behance"
+		}
+	],
+	"img": "url(public/alex.jpg)",
+	"skills":["Арт-дирекшн", "3D", "Ретушь", "Motion design", "UI/UX"]
+}

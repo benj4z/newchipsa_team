@@ -2,81 +2,104 @@
 	"main":[
 		{
 			"name": "Максим Кыштымов",
-			"rank": "отец-основатель",
-			"link": "team/maxkysh"
+			"rank": "CEO",
+			"link": "team/maxkysh",
+			"img": "url(public/max.jpg)"
 		},
 		{
 			"name": "Татьяна Кыштымова",
-			"rank": "проект-менеджер",
-			"link": "team/tanyakysh"
+			"rank": "project Manager",
+			"link": "team/tanyakysh",
+			"img": "url(public/tanya.jpg)"
+
 		},
 		{
 			"name": "Константин Кулеша",
-			"rank": "проект-менеджер",
+			"rank": "project Manager",
 			"link": "team/kylesha",
-			"img": "url(public/kylesha.jpg)"
+			"img": "url(public/kostya.jpg)"
 		},
 		{
 			"name": "Екатерина Проскурина",
-			"rank": "менеджер",
-			"link": "team/proskyrina"
+			"rank": "client Manger",
+			"link": "team/proskyrina",
+			"img": "url(public/kate.jpg)"
 		},
 		{
 			"name": "Александр Педченко",
-			"rank": "арт-директор",
-			"link": "team/pedchenko"
+			"rank": "art Director, CGI Designer",
+			"link": "team/pedchenko",
+			"img": "url(public/alex.jpg)"
 		},
 		{
 			"name": "Кирилл Ким",
-			"rank": "ui/ux, branding, motion дизайнер",
-			"link": "team/kim"
+			"rank": "senior designer",
+			"link": "team/kim",
+			"img": "url(public/kirill.jpg)"
 		},
 		{
 			"name": "Эйнар Хамидуллин",
-			"rank": "motion-дизайнер",
-			"link": "team/Khamidulin"
+			"rank": "middle designer",
+			"link": "team/khamidulin",
+			"img": "url(public/einar.jpg)"
 		},
 		{
 			"name": "Владимир Игнатенко",
-			"rank": "ui/ux дизайнер",
-			"link": "team/Ignatenko"
+			"rank": "junior designer",
+			"link": "team/ignatenko",
+			"img": "url(public/vova.jpg)"
+		},
+		{
+			"name": "Софья Тресковская",
+			"rank": "junior designer",
+			"link": "team/treskovskaya",
+			"img": "url(public/sofi.jpg)"
+
 		},
 		{
 			"name": "Евгений Якуба",
-			"rank": "frontend разработчик",
-			"link": "team/Jakuba"
+			"rank": "frontend developer",
+			"link": "team/jakuba",
+			"img": "url(public/john.jpg)"
 		},
 		{
 			"name": "Иван Решетило",
-			"rank": "backend разработчик",
-			"link": "team/Reshetilo"
+			"rank": "senior backend developer",
+			"link": "team/reshetilo",
+			"img": "url(public/ivan.jpg)"
+		},
+		{
+			"name": "Сергей Шуть",
+			"rank": "junior backend developer",
+			"link": "team/shuts",
+			"img": "url(public/serj.jpg)"
 		}
 	],
 	"remote":[
 		{
-			"name": "Евгений Игнашев",
-			"rank": "проект-менеджер",
-			"link": "team/kylesha"
+			"name": "Антон Решетин",
+			"rank": "копирайтер",
+			"link": "#"
 		},
 		{
-			"name": "Дарья Петреева",
-			"rank": "проект-менеджер",
-			"link": "team/kylesha"
+			"name": "Артём Маркелов",
+			"rank": "SEO-специалист",
+			"link": "#"
 		},
 		{
-			"name": "Екатерина Шестакова",
-			"rank": "проект-менеджер",
-			"link": "team/kylesha"
+			"name": "Антон Лазарев",
+			"rank": "маркетолог",
+			"link": "#"
 		},
 		{
-			"name": "Филипп Бабанин",
-			"rank": "проект-менеджер",
-			"link": "team/kylesha"
+			"name": "Евгений Горбунов",
+			"rank": "фотограф",
+			"link": "#"
 		},
 		{
-			"name": "Павел Шаталов",
-			"rank": "проект-менеджер",
-			"link": "team/kylesha"
+			"name": "Евгений Игнашов",
+			"rank": "проектировщик",
+			"link": "#"
 		}
 	]
 }

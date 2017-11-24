@@ -1,0 +1,7 @@
+{
+	"name": "Эйнар Хамидуллин",
+	"rank": "Middle Designer",
+	"descr": "Неутолимая тяга к росту, стремление пробовать и учиться.",
+	"img": "url(public/einar.jpg)",
+	"skills":["Motion дизайн", "UI/UX"]
+}

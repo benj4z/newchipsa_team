@@ -1,0 +1,17 @@
+{
+	"name": "Евгений Якуба",
+	"rank": "frontend developer",
+	"descr": "Развивается семимильными шагами. Знает толк в своё деле.",
+	"awards": [
+		{
+			"img": "public/achivements/geek.png",
+			"award_text": "JavaScript advanced level (GeekBrains)"
+		}, 
+		{
+			"img": "public/achivements/geek.png",
+			"award_text": "HTML&CSS advanced level (GeekBrains)"
+		}
+	],
+	"img": "url(public/john.jpg)",
+	"skills":["HTML", "CSS", "JavaScript", "Современные js фреймворки", "Системы сборки проектов"]
+}

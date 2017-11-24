@@ -1,0 +1,14 @@
+{
+	"name": "Максим Кыштымов",
+	"rank": "CEO",
+	"descr": "Подскажет выход из любой ситуации. Снимает фото и видео.",
+	"awards": [
+		{
+			"img": "public/achivements/lean.png",
+			"award_text": "Основы бережливого производства"
+		}
+	],
+	"img": "url(public/max.jpg)",
+	"email": "ceo@chipsa.ru",
+	"skills":["Арт-дирекшн", "Ведение проектов", "UI/UX", "Motion design", "Branding", "3D"]
+}
