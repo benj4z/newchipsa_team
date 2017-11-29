@@ -46,7 +46,7 @@
 					$(this.$el).find('.team-header').toggleClass('onScreen offScreen');
 					$(this.$el).find('.team-content').toggleClass('onScreen offScreen');
 					done();
-				}, 600);
+				},50);
 			},
 			beforeAnimate(){
 				$(this.$el).find('.small-view').removeClass('onScreen');
@@ -385,9 +385,12 @@
 		.team .team-header .back-button{
 			bottom: 8px;
 		}
-		.team .team-content .team-container{
-			position: static;
+		.team .team-content.onScreen{
+			position: relative;
 		}
+		/* .team .team-content .team-container{
+			position: static;
+		} */
 	}
 	@media (max-width: 321px){
 		.team .team-header .worker-switch li{

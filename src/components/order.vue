@@ -20,11 +20,11 @@
 				.custom-check
 					input(type="radio" value="больше 1000" name="budget" id="high")
 					label(for="high") более 1 000 т.р.
-			.submit
-				input(type="submit" value="Отправить")
 			.agree-check
 					input(type="checkbox" value="yes" v-model="agreed" v-bind:class="{'input': true, 'is-danger': errors.has('agreed') }" v-validate="'required'" name="agreed" id="agreed")
 					label(for="agreed") Я даю #[a(href="http://chipsa.ru/agree.pdf" target="_blank") Согласие] на обработку данных, в т.ч. отправку информационных сообщений
+			.submit
+				input(type="submit" value="Отправить")
 		.sucsess
 			h2 Спасибо! #[br] Мы вам перезвоним.
 
@@ -146,7 +146,7 @@
 					left: 0px;
 					width: 100%;
 					height: 4px;
-					background-color: #fff;
+					background-color: #fecc03;
 					transition: all .35s;
 				}
 				[type="radio"]:checked + label:after {
@@ -157,9 +157,16 @@
 		.submit{
 			display: inline-block;
 			vertical-align: middle;
+			&:hover {
+				input[type="submit"]{
+					color: #fecc03;
+				}
+				&::before {
+					background-color: #fecc03;
+				}
+			}
 		}
 		input[type="submit"]{
-			display: inline-block;
 			padding: 0px;
 			background-color: transparent;
 			border: none;
@@ -169,8 +176,8 @@
 			font-family: Northem;
 		}
 		.agree-check{
-			display: inline-block;
-			margin-left: 60px;
+			margin-left: 30px;
+			margin-bottom: 20px;
 			vertical-align: middle;
 			&:last-child{
 				margin-right: 0px;
@@ -330,7 +337,10 @@
 			border-radius: 0px;
 		}
 		.order-container .form-group input, .order-container .form-group textarea{
-			padding-bottom: 5px;
+			padding-bottom: 3px;
+		}
+		.order-container .form-group textarea{
+			height: 26px;
 		}
 		.order-container .form-group.big-margin{
 		    margin-bottom: 15px;
