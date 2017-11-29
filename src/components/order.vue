@@ -337,7 +337,10 @@
 			border-radius: 0px;
 		}
 		.order-container .form-group input, .order-container .form-group textarea{
-			padding-bottom: 5px;
+			padding-bottom: 3px;
+		}
+		.order-container .form-group textarea{
+			height: 26px;
 		}
 		.order-container .form-group.big-margin{
 		    margin-bottom: 15px;

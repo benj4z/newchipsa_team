@@ -150,7 +150,7 @@
 		background-position: center;
 		background-size: cover;
 		opacity: 0;
-		transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
 		&.onScreen{
 			opacity: 1;
 		}
@@ -473,7 +473,7 @@
 			display: none;
 		}
 		.item .color-half h2{
-			font-size: 27px;
+			font-size: 26px;
 		}
 		.item .color-half, .item .info-half{
 			padding: 8%;

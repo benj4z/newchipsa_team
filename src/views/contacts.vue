@@ -286,7 +286,7 @@
 			let krskMap;
 			let image = 'src/assets/marker.svg';
 			let self = this
-			function initMscMap() {
+			/*function initMscMap() {
 				mscMap = new google.maps.Map(document.getElementById('moscow-map'), {
 					center: {lat: 55.75677, lng: 37.56261799999993},
 					zoom: 16,
@@ -301,7 +301,7 @@
 					map: mscMap,
 					icon: image
 		        });
-			}
+			}*/
 			function initKrskMap() {
 				krskMap = new google.maps.Map(document.getElementById('kras-map'), {
 					center: {lat: 56.03064699999999, lng: 92.92150199999992},
@@ -320,7 +320,7 @@
 			}
 
 			initKrskMap();
-			initMscMap();
+			/*initMscMap();*/
 			
 			setTimeout(function(){
 				$('.map').removeClass('prerender');
@@ -358,7 +358,7 @@
 		height: 100%;
 		background-size: cover;
 		background-position: center;
-		transition: all .35s cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition: all .45s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 	.contact-content{
 		position: absolute;

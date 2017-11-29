@@ -270,6 +270,7 @@
 		}
 		.member-info{
 			flex-flow: column;
+			justify-content: space-around;
 		}
 		.member-info .half{
 			width: 50%;
@@ -286,8 +287,12 @@
 		.member-info .half .personal .name{
 			font-size: 5.6vw;
 		}
-		.member-info .half .quote, .member-info .half .skills{
+		.member-info .half .skills{
 			font-size: 20px;
+		}
+
+		.member-info .half .quote {
+			font-size: 14px;
 		}
 		.member-info .half .email{
 			font-size: 20px;
@@ -327,7 +332,7 @@
 			height: 25%;
 		}
 		.member-info .half .quote{
-			font-size: 18px;
+			font-size: 14px;
 			line-height: 115%;
 			width: 90%;
 		}
