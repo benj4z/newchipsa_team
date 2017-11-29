@@ -323,9 +323,9 @@
 			font-size: 14px;
 		}
 		.raiting-view .col:first-child .name{
-			font-size: 22px;
+			font-size: 19px;
 			top: 35%;
-			line-height: 110%;
+			line-height: 132%;
 		}
 		.raiting-view .col:first-child .name:nth-child(2){
 			top: 39%!important;

@@ -523,7 +523,7 @@
 			margin-top: 20px;
 		}
 		.contact-content .contacts-map .email{
-		    font-size: 9.5vw;
+		    font-size: 11.5vw;
 		}
 		footer .socials li{
 			margin-right: 8px;
@@ -557,7 +557,7 @@
 		.contact-content .contacts-map ul li button{
 			padding: 0px;
 			padding-bottom: 5px;
-			font-size: 18px;
+			font-size: 17px;
 		}
 		.contact-content .contacts-info .adress{
 			font-size: 14px;
@@ -568,11 +568,11 @@
 		}
 		.contact-content .contacts-info .phone-call a{
 			font-size: 20px;
-		    margin-bottom: 38px;
+		    margin-bottom: 13px;
     		display: inline-block;
 		}
 		.contact-content .contacts-info .show-map{
-			margin-top: 18px;
+			margin-top: 37px;
 			font-size: 18px;
 		}
 		.contact-content .contacts-info.onScreen {
