@@ -223,8 +223,12 @@
 	}
 
 	@media (max-width: 1367px){
-		.member-info .half .quote, .member-info .half .skills{
+		.member-info .half .skills{
 			font-size: 16px;
+		}
+
+		.member-info .half .quote {
+			font-size: 14px;
 		}
 	}
 

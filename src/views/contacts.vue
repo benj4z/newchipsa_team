@@ -7,16 +7,15 @@
 				.map.prerender#kras-map
 				.contacts-map.offScreen
 					ul
-						li(v-bind:class='{ active: moscow }' @click="switchCity")
-							button Офис в Москве
 						li(v-bind:class='{ active: !moscow }' @click="switchCity")
 							button Офис в Красноярске
+						li(v-bind:class='{ active: moscow }' @click="switchCity")
+							button Контакты в Москве
 					a.email(href="mailto:info@chipsa.ru") info@chipsa.ru
 				.contacts-info.offScreen
 					transition(name='fade' mode="out-in")
 						.contacts-block(v-show="moscow")
-							a.show-map(@click="showMap") Показать на карте
-							p.adress 653453, Россия, Москва #[br] Рочдельская, 15 строение 25
+							p.adress Готовы встречаться лично в столице — давайте договариваться
 							.phone-call
 								p Время для звонка: #[br] с 9:00 — 16:00
 								a(href="tel:8—499—323—34—34") 8—499—323—34—34
@@ -36,7 +35,7 @@
 		name: 'contacts',
 		data(){
 			return{
-				moscow: true,
+				moscow: false,
 				style:[
 				    {
 				        "featureType": "all",
@@ -220,7 +219,7 @@
 				    }
 				],
 				maps:['url(src/assets/map1.jpg)', 'url(src/assets/map2.jpg)'],
-				map_picture: 'url(src/assets/map1.jpg)'
+				map_picture: 'url(src/assets/map2.jpg)'
 			}
 		},
 		methods:{
