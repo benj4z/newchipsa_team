@@ -222,17 +222,17 @@
 		.small-view h1{
 	        top: 4%;
 	        left: 10%;
-	        font-size: 11vw;
+	        font-size: 8vw;
 	    }
 	    .small-view p{
-	        bottom: 4%;
+	        bottom: 6%;
 	        left: 8%;
-	        line-height: 150%;
+	        line-height: 141%;
    	 		font-size: 4.7vw;
    	 		width: 85%;
 	    }
 	    .small-view a {
-	    	bottom: 35%;
+	    	bottom: 50%;
 	    }
 	   	.desktop-showreel{
 			display: none;

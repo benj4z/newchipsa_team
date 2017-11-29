@@ -252,7 +252,7 @@
 					color: #fff;
 					text-decoration: none;
 					text-transform: uppercase;
-					font-size: 17px;
+					font-size: 14px;
 					line-height: 155%;
 					font-weight: 400;
 				}
@@ -329,7 +329,7 @@
 		height: 100%;
 	}
 	.owl-carousel .owl-item img{
-		width: auto;
+		width: 15px;
 	}
 	.owl-controls{
         position: absolute;
@@ -473,7 +473,7 @@
 			display: none;
 		}
 		.item .color-half h2{
-			font-size: 32px;
+			font-size: 27px;
 		}
 		.item .color-half, .item .info-half{
 			padding: 8%;
@@ -503,8 +503,8 @@
 			font-size: 22px;
 		}
 		.owl-controls .owl-dots .owl-dot{
-			width: 14px;
-			height: 14px;
+			width: 11px;
+			height: 11px;
 		}
 	}
 </style>
