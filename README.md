@@ -1,6 +1,8 @@
 # newchipsa
 
-> A Vue.js project
+New website for chipsa, was made by me in 2017. 
+It was first experience with frameworks after jQuery.
+End there is nothing to proud of but i decided to stay this repo for the memory ;)
 
 ## Build Setup
 
@@ -14,5 +16,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
