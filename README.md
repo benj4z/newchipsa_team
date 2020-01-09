@@ -2,7 +2,7 @@
 
 New website for chipsa, was made by me in 2017. 
 It was first experience with frameworks after jQuery.
-End there is nothing to proud of but i decided to stay this repo for the memory ;)
+And there is nothing to proud of but i decided to stay this repo for the memory ;)
 
 ## Build Setup
 
